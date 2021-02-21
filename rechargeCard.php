@@ -1,22 +1,22 @@
 
 <?php
 
-function random($length)
+function generateRechargeCard($length)
 {
-  //get strings of number 1-9
+  //get strings of number 0-9
 	$chars = implode(range('0','9'));
   //shuffle the string
 	$shuffled = str_shuffle($chars);
   //return the first four numbers
 	return substr($shuffled, 0, $length);
 }
-function rechargeCard()
+function printRechargeCard()
 {
-	return random(4).'-'.random(4).'-'.random(4).'-'.random(4). '<br>';
+	return generateRechargeCard(4).'-'.generateRechargeCard(4).'-'.generateRechargeCard(4).'-'.generateRechargeCard(4). '<br>';
 }
 
 for ($i = 0; $i<= 200; $i++){
-  echo rechargeCard();
+  echo printRechargeCard();
 }
 
 ?>
